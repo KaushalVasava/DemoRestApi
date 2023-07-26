@@ -1,53 +1,42 @@
-This is a [Kobweb](https://github.com/varabyte/kobweb) project bootstrapped with the `app/empty` template.
+It is a simple REST Api using Kotlin and Docker.
 
-This template is useful if you already know what you're doing and just want a clean slate. By default, it
-just creates a blank home page (which prints to the console so you can confirm it's working)
+# Setup
+- Download kobweb
+  
+  https://github.com/varabyte/kobweb-cli/releases/download/v0.9.13/kobweb-0.9.13.zip
+- Set `path variable` of kobweb. ie. ..kobweb/bin folder path
+- Open Command prompt, set your project directory location and Run `kobweb create`
+- Open IntelliJ IDE and open kobweb project from your project location
+- Build project and If getting error then open `settings.gradle.kts` and change root project name to `Pascal Case` ie. DemoApi then re-build.
 
-If you are still learning, consider instantiating the `app` template (or one of the examples) to see actual,
-working projects.
 
-## Getting Started
+# Steps
+- Write your code in `/api` package
+- If you need serializaton plugin then checkout this repo https://github.com/Kotlin/kotlinx.serialization and put in the `libs.version.toml` file and use in your `build.gradle.kts`.
+- To Run server
+  1. Goto terminal in the IntelliJ
+  2. Write `cd site`
+  4. Write `kobweb run`
+  
+         If you get nodejs error then download it from the error link. ie. 'https://nodejs.org/dist/v18.12.1/node-v18.12.1-win-x64.zip'.  
 
-First, run the development server by typing the following command in a terminal under the `site` folder:
+  5. Open browser and run localserver, ie. http://localhost:8080/api/people?count=2
+  6. Push code on Github
 
-```bash
-$ cd site
-$ kobweb run
-```
+# Deploy server for free
+- Goto https://render.com/
+- Create account
+- Connect your github
+- Create new webservice from render dashboard
+- Select your github repo and connect
+- Give name and choose free plan
+- Click on Create webservice, It will take few minutes to deploy, so be patience
+- After successfully deploy, you can check your API from given link.
 
-Open [http://localhost:8080](http://localhost:8080) with your browser to see the result.
+# Technology & Tools Used
+- Kotlin
+- Docker
+- Gradle
+- IntelliJ IDE
 
-You can use any editor you want for the project, but we recommend using **IntelliJ IDEA Community Edition** downloaded
-using the [Toolbox App](https://www.jetbrains.com/toolbox-app/).
-
-Press `Q` in the terminal to gracefully stop the server.
-
-### Live Reload
-
-Feel free to edit / add / delete new components, pages, and API endpoints! When you make any changes, the site will
-indicate the status of the build and automatically reload when ready.
-
-## Exporting the Project
-
-When you are ready to ship, you should shutdown the development server and then export the project using:
-
-```bash
-kobweb export
-```
-
-When finished, you can run a Kobweb server in production mode:
-
-```bash
-kobweb run --env prod
-```
-
-If you want to run this command in the Cloud provider of your choice, consider disabling interactive mode since nobody
-is sitting around watching the console in that case anyway. To do that, use:
-
-```bash
-kobweb run --env prod --notty
-```
-
-Kobweb also supports exporting to a static layout which is compatible with static hosting providers, such as GitHub
-Pages, Netlify, Firebase, any presumably all the others. You can read more about that approach here:
-https://bitspittle.dev/blog/2022/staticdeploy
+Author: Kaushal Vasava
