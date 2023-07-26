@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.kobweb.application)
     // alias(libs.plugins.kobwebx.markdown)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 group = "com.kaushalvasava.apis.demoapi"
@@ -41,6 +42,7 @@ kotlin {
         val jvmMain by getting {
             dependencies {
                 implementation(libs.kobweb.api)
+                implementation(libs.kotlinx.serialization)
             }
         }
     }
